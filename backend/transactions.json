@@ -1,0 +1,37 @@
+[
+  {
+    "userId": "67a080349088cb47e2ccd98e",
+    "amount": 100,
+    "transactionType": "deposit",
+    "description": "new balance",
+    "date": "2025-02-04T08:45:32.629Z"
+  },
+  {
+    "userId": "67a080349088cb47e2ccd98e",
+    "amount": 25,
+    "transactionType": "withdrawal",
+    "description": "expense",
+    "date": "2025-02-04T08:45:47.544Z"
+  },
+  {
+    "userId": "67a080349088cb47e2ccd98e",
+    "amount": 10,
+    "transactionType": "deposit",
+    "description": "i dont know",
+    "date": "2025-02-04T08:48:28.735Z"
+  },
+  {
+    "userId": "67a080349088cb47e2ccd98e",
+    "amount": 1,
+    "transactionType": "deposit",
+    "description": "k",
+    "date": "2025-02-04T08:56:37.757Z"
+  },
+  {
+    "userId": "67a080349088cb47e2ccd98e",
+    "amount": 1,
+    "transactionType": "deposit",
+    "description": "k",
+    "date": "2025-02-04T08:56:50.318Z"
+  }
+]

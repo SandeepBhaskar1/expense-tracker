@@ -4,16 +4,16 @@ const authenticateToken = (req, res, next) => {
     const token = req.cookies.token || req.headers['authorization']?.split(' ')[1];
     
     if (!token) {
-      return res.status(403).json({ message: 'Access Denied.' });
+        return res.status(403).json({ message: 'Access Denied.' });
     }
-  
+    
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-      if (err) {
-        return res.status(403).json({ message: 'Invalid or Expired Token' });
-      }
-      req.user = user;
-      next();
+        if (err) {
+            return res.status(403).json({ message: 'Invalid or Expired Token' });
+        }
+        req.user = user;
+        next();
     });
-  };
+};
 
-  module.exports = {authenticateToken};
+module.exports = { authenticateToken };
