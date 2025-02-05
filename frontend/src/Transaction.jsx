@@ -43,7 +43,7 @@ function Transaction() {
     if (!token) return;
 
     try {
-      const response = await api.get('http://localhost:1163/transactions/balance', {
+      const response = await api.get(`${BACKEND_URL}/transactions/balance`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       setBalance(response.data.balance);
@@ -61,7 +61,7 @@ function Transaction() {
     if (!token) return;
 
     try {
-      const response = await api.get('http://localhost:1163/transactions/transactions', {
+      const response = await api.get(`${BACKEND_URL}/transactions/transactions`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       setTransactions(response.data.transactions || []);
@@ -89,7 +89,7 @@ function Transaction() {
     }
 
     try {
-      const response = await api.post(`http://localhost:1163/transactions/transaction`, {
+      const response = await api.post(`${BACKEND_URL}/transactions/transaction`, {
         amount: parseFloat(amount),
         transactionType,
         description,
