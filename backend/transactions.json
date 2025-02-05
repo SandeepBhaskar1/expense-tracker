@@ -61,5 +61,12 @@
     "transactionType": "deposit",
     "description": "salary",
     "date": "2025-02-05T16:29:41.298Z"
+  },
+  {
+    "userId": "67a1aa533596057c21455a4e",
+    "amount": 500,
+    "transactionType": "deposit",
+    "description": "salary",
+    "date": "2025-02-05T18:44:00.759Z"
   }
 ]
