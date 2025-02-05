@@ -22,6 +22,7 @@ const Register = ({ onRegisterSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Basic validation
     if (formData.password !== formData.retypePassword) {
       setError('Passwords do not match');
       return;
@@ -56,14 +57,17 @@ const Register = ({ onRegisterSuccess }) => {
       const data = await response.json();
 
       if (!response.ok) {
+        // Custom error handling for specific backend messages
         throw new Error(data.message || 'Registration failed');
       }
 
+      // Handle success
       if (onRegisterSuccess) {
         onRegisterSuccess();
       }
 
-      navigate('/login'); 
+      // Optionally navigate the user to another page after registration
+      navigate('/login'); // Change this to the route you want to navigate to
     } catch (error) {
       setError(error.message || 'An error occurred while registering');
     }
@@ -71,6 +75,7 @@ const Register = ({ onRegisterSuccess }) => {
 
   return (
     <div className="flex min-h-screen">
+      {/* Left Side - Form */}
       <div className="w-1/2 p-8 bg-white flex items-center justify-center">
         <div className="w-full max-w-md">
           <h2 className="text-2xl font-bold mb-2">Create Your Account</h2>
@@ -205,6 +210,7 @@ const Register = ({ onRegisterSuccess }) => {
         </div>
       </div>
 
+      {/* Right Side - Welcome Section */}
       <div className="w-1/2 bg-black p-8 flex items-center justify-center text-white">
         <div className="max-w-md">
           <h1 className="text-4xl font-bold mb-4">Track Your Expenses with Ease – Stay On Top of Your Finances!</h1>

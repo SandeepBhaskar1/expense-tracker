@@ -1,8 +1,11 @@
 // Cors
+require('dotenv').config();
+
 const corsOptions = {
     origin: process.env.NODE_ENV === 'production' 
         ? process.env.FRONTEND_CLOUD_URL
         : process.env.FRONTEND_LOCAL_URL,  
+    // origin: 'http://localhost:5173',
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],

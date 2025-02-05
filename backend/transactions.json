@@ -33,5 +33,33 @@
     "transactionType": "deposit",
     "description": "k",
     "date": "2025-02-04T08:56:50.318Z"
+  },
+  {
+    "userId": "67a080349088cb47e2ccd98e",
+    "amount": 25,
+    "transactionType": "deposit",
+    "description": "lost",
+    "date": "2025-02-05T16:26:19.562Z"
+  },
+  {
+    "userId": "67a1aa533596057c21455a4e",
+    "amount": 10,
+    "transactionType": "deposit",
+    "description": "lost",
+    "date": "2025-02-05T16:27:24.436Z"
+  },
+  {
+    "userId": "67a1aa533596057c21455a4e",
+    "amount": 5,
+    "transactionType": "withdrawal",
+    "description": "waste",
+    "date": "2025-02-05T16:27:37.183Z"
+  },
+  {
+    "userId": "67a391d50717ef97c8bcb570",
+    "amount": 105,
+    "transactionType": "deposit",
+    "description": "salary",
+    "date": "2025-02-05T16:29:41.298Z"
   }
 ]

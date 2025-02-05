@@ -41,6 +41,7 @@ const Login = () => {
 
   return (
     <div className="flex min-h-screen">
+      {/* Left Side - Form */}
       <div className="w-1/2 p-8 bg-white flex items-center justify-center">
         <div className="w-full max-w-md">
           <h2 className="text-2xl font-bold mb-2">Welcome Back!</h2>
@@ -97,6 +98,7 @@ const Login = () => {
         </div>
       </div>
 
+      {/* Right Side - Welcome Section */}
       <div className="w-1/2 bg-black p-8 flex items-center justify-center text-white">
         <div className="max-w-md">
           <h1 className="text-4xl font-bold mb-4">Track Your Expenses with Ease – Stay On Top of Your Finances!</h1>

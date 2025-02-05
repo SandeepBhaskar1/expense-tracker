@@ -23,6 +23,7 @@
     "fs": "^0.0.1-security",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.9.5"
+    "mongoose": "^8.9.5",
+    "validator": "^13.12.0"
   }
 }

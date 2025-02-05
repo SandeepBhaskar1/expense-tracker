@@ -20,7 +20,7 @@ function Transaction() {
     return tokenCookie ? tokenCookie.split('=')[1] : null;
   };
 
-  const BACKEND_URL = import.meta.env.NODE_ENV = 'production'?
+  const BACKEND_URL = import.meta.env.NODE_ENV === 'production'?
   import.meta.env.BACKEND_CLOUD_URL :  import.meta.env.BACKEND_CLOUD_URL;
 
   const api = axios.create({
@@ -43,7 +43,7 @@ function Transaction() {
     if (!token) return;
 
     try {
-      const response = await api.get('/transactions/balance', {
+      const response = await api.get('http://localhost:1163/transactions/balance', {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       setBalance(response.data.balance);
@@ -61,7 +61,7 @@ function Transaction() {
     if (!token) return;
 
     try {
-      const response = await api.get('/transactions/transactions', {
+      const response = await api.get('http://localhost:1163/transactions/transactions', {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       setTransactions(response.data.transactions || []);
@@ -89,7 +89,7 @@ function Transaction() {
     }
 
     try {
-      const response = await api.post('/transactions/transaction', {
+      const response = await api.post(`http://localhost:1163/transactions/transaction`, {
         amount: parseFloat(amount),
         transactionType,
         description,
@@ -158,7 +158,9 @@ function Transaction() {
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg p-8">
         <div className="mb-6">
           <h2 className="text-xl font-medium text-gray-700">Your Balance:</h2>
-          <p className="text-2xl font-bold text-green-600">${balance !== null ? balance.toFixed(2) : '...'}</p>
+          <p className="text-2xl font-bold text-green-600">
+  {balance !== null && balance !== undefined ? balance.toFixed(2) : 'Loading...'}
+</p>
         </div>
 
         <div className="mb-6">
