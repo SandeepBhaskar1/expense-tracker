@@ -152,23 +152,21 @@ const Register = ({ onRegisterSuccess }) => {
               <input
                 type="password"
                 className="w-full p-2 mt-1 border border-gray-300 rounded-lg"
-                placeholder="••••••"
+                placeholder="Enter a password"
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                autoComplete="new-password"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Retype Password</label>
+              <label className="block text-sm font-medium text-gray-700">Confirm Password</label>
               <input
                 type="password"
                 className="w-full p-2 mt-1 border border-gray-300 rounded-lg"
-                placeholder="••••••"
+                placeholder="Retype your password"
                 value={formData.retypePassword}
                 onChange={(e) => setFormData({ ...formData, retypePassword: e.target.value })}
-                autoComplete="new-password"
                 required
               />
             </div>
@@ -176,47 +174,23 @@ const Register = ({ onRegisterSuccess }) => {
             <div className="flex items-center">
               <input
                 type="checkbox"
-                id="terms"
-                className="mr-2"
+                id="acceptTerms"
                 checked={formData.acceptTerms}
-                onChange={(e) => setFormData({ ...formData, acceptTerms: e.target.checked })}
+                onChange={() => setFormData({ ...formData, acceptTerms: !formData.acceptTerms })}
                 required
               />
-              <label htmlFor="terms" className="text-sm text-gray-600">
-                I accepted all terms & conditions.
-              </label>
+              <label htmlFor="acceptTerms" className="ml-2 text-sm text-gray-700">I accept the terms and conditions</label>
             </div>
 
-            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+            {error && <p className="text-red-500 text-sm">{error}</p>}
 
             <button
               type="submit"
               className="w-full bg-black text-white p-2 rounded-lg font-medium hover:bg-gray-800"
             >
-              Sign Up
+              Register
             </button>
-
-            <p className="text-center text-sm text-gray-600">
-              Already have an account?{' '}
-              <button
-                type="button"
-                onClick={() => navigate('/login')}
-                className="text-black font-medium hover:underline"
-              >
-                Sign In
-              </button>
-            </p>
           </form>
-        </div>
-      </div>
-
-      {/* Right Side - Welcome Section */}
-      <div className="w-1/2 bg-black p-8 flex items-center justify-center text-white">
-        <div className="max-w-md">
-          <h1 className="text-4xl font-bold mb-4">Track Your Expenses with Ease – Stay On Top of Your Finances!</h1>
-          <p className="text-gray-300 mb-8">
-            Keep track of your spending, set budgets, and manage your finances with ease. Our platform helps you monitor your daily, weekly, and monthly expenses to ensure you're always in control of your money. Start today and make smarter financial decisions for a brighter future!
-          </p>
         </div>
       </div>
     </div>
