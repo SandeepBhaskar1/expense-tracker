@@ -45,7 +45,11 @@ app.use('/auth', auth); // Authentication routes (login, register, etc.)
 app.use('/transactions', transactionRoutes); // Transactions routes
 
 // MongoDB connection setup
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    connectTimeoutMS: 30000 // 30 seconds (increase the default timeout)
+})
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.log('Error connecting to MongoDB:', err));
 
